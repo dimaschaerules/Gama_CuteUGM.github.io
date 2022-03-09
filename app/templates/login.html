@@ -1,0 +1,32 @@
+{% extends 'auth_layout.html' %}
+{% block title %} {{ title }} {% endblock %}
+{% block content%}
+<style>
+    body{
+        background-image: url("static/img/brand/balairung.jpg");
+        background-repeat: no-repeat;
+        background-size: 1450px 850px;
+    }
+</style>
+<center><img src="static/img/brand/Logo Tengah Stack-Up.png" width="200" height="200"></center>
+<div class="login">
+    {% include "alert.html" %}
+    <h1>GAMA CUTE Login System</h1>
+    <div class="links">
+        <a href="{{ url_for('login') }}" class="active">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+    <form action="{{ url_for('login') }}" method="post">
+        <label for="username">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="username" placeholder="Username" id="username" required>
+        <label for="password">
+            <i class="fas fa-lock"></i>
+        </label>
+        <input type="password" name="password" placeholder="Password" id="password" required>
+        <div class="msg">{{ msg }}</div>
+        <input type="submit" value="Login">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,123 @@
+<!--
+
+=========================================================
+* Argon Dashboard - v1.1.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include "head.html" %}
+</head>
+
+<body class="">
+  <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+    <div class="container-fluid">
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Brand -->
+      <a class="navbar-brand pt-0" href="localhost:5000">
+        <img src="static/img/brand/ugm.jpg" class="navbar-brand-img">
+      </a>
+      {% include "user.html" %}
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+        <!-- Collapse header -->
+        <div class="navbar-collapse-header d-md-none">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a href="./index.html">
+                <img src="static/img/brand/ugm.jpg">
+              </a>
+            </div>
+            <div class="col-6 collapse-close">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        {% include "sidebar.html" %}
+  <div class="main-content">
+    {% include "nav.html" %}
+    <!-- Header -->
+    <div class="header bg-gradient-default pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        <div class="header-body">
+          <!-- Card stats -->
+          <div class="row">
+            <div class="col-xl-6 col-lg-12">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <span><h5 class="card-title text-uppercase text-muted mb-0">Welcome, {{username}}</h5></span>
+                      <span class="h2 font-weight-bold mb-0">GAMA CUTE Version 1.0.0</span>
+                      <span class="h2 font-weight-bold mb-0"><br>Number of Data in Training Dataset : {{ numberdata }}
+                      <!-- 
+                      <span class="h2 font-weight-bold mb-0"><br>Number of Data in Database : {{ database }} -->
+
+                      <!-- <span class="h2 font-weight-bold mb-0"><br>RBC : Red Blood Count
+                      <span class="h2 font-weight-bold mb-0"><br>Hb : Hemoglobin
+                      <span class="h2 font-weight-bold mb-0"><br>MCV : Mean Corpuscular Volume
+                      <span class="h2 font-weight-bold mb-0"><br>MCH : Mean Corpuscular Hemoglobin
+                      <span class="h2 font-weight-bold mb-0"><br>MCHC : Mean Corpuscular Hemoglobin Concentration
+                      <span class="h2 font-weight-bold mb-0"><br>RDW : Red-Cell Distribution Width -->
+
+
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                        <i class="fas fa-code"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-12">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Evaluate</h5>
+                      <span class="h2 font-weight-bold mb-0">Accuracy evaluation score : 87.30%
+                      <span class="h2 font-weight-bold mb-0"><br> Precision evaluation score : 90.89%
+                      <span class="h2 font-weight-bold mb-0"><br> Recall evaluation score : 78.40%
+                      <span class="h2 font-weight-bold mb-0"><br> F1 evaluation score : 81.00%
+
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="fas fa-chart-bar"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid mt--3">
+      {% include "footer.html" %}
+    </div>
+  </div>
+  {% include "scripts.html" %}
+</body>
+
+</html>

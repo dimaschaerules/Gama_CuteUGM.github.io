@@ -1,0 +1,202 @@
+<!--
+
+=========================================================
+* Argon Dashboard - v1.1.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include "head.html" %}
+</head>
+
+<body class="">
+  <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+    <div class="container-fluid">
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Brand -->
+      <a class="navbar-brand pt-0" href="./index.html">
+        <img src="static/img/brand/ugm.jpg" class="navbar-brand-img" alt="...">
+      </a>
+      {% include "user.html" %}
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+        <!-- Collapse header -->
+        <div class="navbar-collapse-header d-md-none">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a href="./index.html">
+                <img src="static/img/brand/ugm.jpg">
+              </a>
+            </div>
+            <div class="col-6 collapse-close">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        {% include "sidebar.html" %}
+  <div class="main-content">
+    {% include "nav.html" %}
+    <!-- Header -->
+    <div class="header bg-gradient-default pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        <div class="header-body">
+          <!-- Card stats -->
+          <div class="row">
+            <div class="col-xl-6 col-lg-12">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <form method="POST" action="/predict">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="rbc">Patient Sample ID</label>
+                          <input type="text" name="sample" class="form-control" id="sample" placeholder="ID Sample Pasien" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="rbc">RBC (10<sup>6</sup>/µL)</label>
+                          <input type="number" step="any" onkeyup="checkDecimal('rbc')" name="rbc" class="form-control" id="rbc" placeholder="0.00" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="hgb">HGB (g/dL)</label>
+                          <input type="number" step="any" onkeyup="checkDecimal('averagePeakUK')" name="hgb" class="form-control" id="hgb" placeholder="0.00" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="hct">HCT (%)</label>
+                          <input type="number" step="any" onkeyup="checkDecimal('hct')" name="hct" class="form-control" id="hct" placeholder="0.00" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="mcv">MCV (fL)</label>
+                          <input type="number" step="any" onkeyup="checkDecimal('mcv')" name="mcv" class="form-control" id="mcv" placeholder="0.00" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="mch">MCH (pg)</label>
+                          <input type="number" step="any" onkeyup="checkDecimal('mch')" name="mch" class="form-control" id="mch" placeholder="0.00" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="mchc">MCHC (%)</label>
+                          <input type="number" step="any" onkeyup="checkDecimal('mchc')" name="mchc" class="form-control" id="mchc" placeholder="0.00" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="rdw">RDW (%)</label>
+                          <input type="number" step="any" onkeyup="checkDecimal('rdw')" name="rdw" class="form-control" id="rdw" placeholder="0.00" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <button class="btn btn-icon btn-3 btn-primary fa-pull-right" type="submit">
+                            <span class="btn-inner--icon"><i class="ni ni-check-bold"></i></span>
+                            <span class="btn-inner--text">Predict</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+      <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+    <div class="modal-dialog modal-success modal-dialog-centered modal-10" role="document">
+        <div class="modal-content bg-gradient-default">
+
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-title-notification">Result Prediction</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="py-3 text-center">
+                  <i class="ni ni-check-bold ni-3x"></i>
+                    <h3 class="heading mt-4">Diagnosis = {{ Diagnosis }}</h3>
+                    <p>Result Single Predict</p>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white ml-auto" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+  </div>
+    </div>
+    <div class="container-fluid mt--3">
+      {% include "footer.html" %}
+    </div>
+  </div>
+  {% include "scripts.html" %}
+  <script type="text/javascript">
+        function checkDecimal(id) {
+            const regex = /^\d+(\.\d{1,4})?$/;
+            const element = document.getElementById(id);
+            if (regex.test(element.value)) {
+                element.classList.remove("is-invalid");
+                element.classList.add("is-valid");
+            } else {
+                element.classList.remove("is-valid");
+                element.classList.add("is-invalid");
+            }
+        }
+        $(window).on('load',function(){
+            console.log("{{ modal }}");
+            $('#modal-notification').modal("{{ modal }}");
+        });
+  </script>
+</body>
+
+</html>
